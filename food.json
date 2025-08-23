@@ -10,10 +10,7 @@
       "лук",
       "говядина"
     ],
-    "questionable": false,
-    "category": "Мясные блюда",
-    "allowedInMeal": [
-    ]
+    "category": "Мясные блюда"
   },
   {
     "name": "фрикадельки",
@@ -25,10 +22,7 @@
       "лук",
       "говядина"
     ],
-    "questionable": false,
-    "category": "Мясные блюда",
-    "allowedInMeal": [
-    ]
+    "category": "Мясные блюда"
   },
   {
     "name": "ежики",
@@ -40,10 +34,7 @@
       "морковь",
       "томаты консервированные"
     ],
-    "questionable": false,
-    "category": "Мясные блюда",
-    "allowedInMeal": [
-    ]
+    "category": "Мясные блюда"
   },
   {
     "name": "ленивые голубцы",
@@ -55,10 +46,7 @@
       "лук",
       "говядина"
     ],
-    "questionable": false,
-    "category": "Мясные блюда",
-    "allowedInMeal": [
-    ]
+    "category": "Мясные блюда"
   },
   {
     "name": "говядина тушеная",
@@ -68,10 +56,7 @@
       "лук",
       "бульон"
     ],
-    "questionable": false,
-    "category": "Мясные блюда",
-    "allowedInMeal": [
-    ]
+    "category": "Мясные блюда"
   },
   {
     "name": "особукко",
@@ -87,10 +72,7 @@
       "морковь",
       "томаты консервированные"
     ],
-    "questionable": false,
-    "category": "Мясные блюда",
-    "allowedInMeal": [
-    ]
+    "category": "Мясные блюда"
   },
   {
     "name": "жаркое",
@@ -104,10 +86,7 @@
       "лук",
       "говядина"
     ],
-    "questionable": false,
-    "category": "Мясные блюда",
-    "allowedInMeal": [
-    ]
+    "category": "Мясные блюда"
   },
   {
     "name": "смэш бургер",
@@ -121,10 +100,7 @@
       "майонез",
       "красный лук"
     ],
-    "questionable": false,
-    "category": "Мясные блюда",
-    "allowedInMeal": [
-    ]
+    "category": "Мясные блюда"
   },
   {
     "name": "оливье",
@@ -140,10 +116,7 @@
       "майонез",
       "красный лук"
     ],
-    "questionable": false,
-    "category": "Мясные блюда",
-    "allowedInMeal": [
-    ]
+    "category": "Мясные блюда"
   },
   {
     "name": "плов",
@@ -157,10 +130,7 @@
       "лук",
       "говядина"
     ],
-    "questionable": true,
-    "category": "Мясные блюда",
-    "allowedInMeal": [
-    ]
+    "category": "Мясные блюда"
   },
   {
     "name": "бифстроганов",
@@ -173,10 +143,7 @@
       "лук",
       "говядина"
     ],
-    "questionable": true,
-    "category": "Мясные блюда",
-    "allowedInMeal": [
-    ]
+    "category": "Мясные блюда"
   },
   {
     "name": "азу по татарски",
@@ -189,10 +156,7 @@
       "лук",
       "говядина"
     ],
-    "questionable": true,
-    "category": "Мясные блюда",
-    "allowedInMeal": [
-    ]
+    "category": "Мясные блюда"
   },
   {
     "name": "курица жареная в панко",
@@ -204,10 +168,7 @@
       "курица",
       "яйца"
     ],
-    "questionable": false,
-    "category": "Блюда из птицы",
-    "allowedInMeal": [
-    ]
+    "category": "Блюда из птицы"
   },
   {
     "name": "курица жареная по-азиатски",
@@ -224,10 +185,7 @@
       "апельсин",
       "соевый соус"
     ],
-    "questionable": false,
-    "category": "Блюда из птицы",
-    "allowedInMeal": [
-    ]
+    "category": "Блюда из птицы"
   },
   {
     "name": "чкмерули",
@@ -238,10 +196,7 @@
       "чеснок",
       "зелень"
     ],
-    "questionable": false,
-    "category": "Блюда из птицы",
-    "allowedInMeal": [
-    ]
+    "category": "Блюда из птицы"
   },
   {
     "name": "чахохбили",
@@ -255,10 +210,7 @@
       "курица",
       "сливочное масло"
     ],
-    "questionable": false,
-    "category": "Блюда из птицы",
-    "allowedInMeal": [
-    ]
+    "category": "Блюда из птицы"
   },
   {
     "name": "запеченая курица с картошкой",
@@ -269,10 +221,7 @@
       "сливочное масло",
       "сыр"
     ],
-    "questionable": false,
-    "category": "Блюда из птицы",
-    "allowedInMeal": [
-    ]
+    "category": "Блюда из птицы"
   },
   {
     "name": "филе в томатном соусе провансаль",
@@ -289,654 +238,213 @@
       "анчоусы",
       "лук"
     ],
-    "questionable": false,
-    "category": "Блюда из птицы",
-    "allowedInMeal": [
-    ]
+    "category": "Блюда из птицы"
   },
   {
     "name": "куриные катлеты",
     "description": null,
     "ingredients": [
+      "курица",
+      "панко сухари",
+      "лук",
+      "яйца"
     ],
-    "questionable": false,
-    "category": "Блюда из птицы",
-    "allowedInMeal": [
-    ]
+    "category": "Блюда из птицы"
   },
   {
     "name": "греча по купечески",
     "description": null,
     "ingredients": [
+      "гречка",
+      "лук",
+      "сливочное масло",
+      "курица",
+      "морковь"
     ],
-    "questionable": false,
-    "category": "Блюда из птицы",
-    "allowedInMeal": [
-    ]
+    "category": "Блюда из птицы"
   },
   {
     "name": "цезарь",
     "description": null,
     "ingredients": [
+      "салат",
+      "курица",
+      "пармезан",
+      "хлеб",
+      "анчоусы",
+      "масло без запаха"
     ],
-    "questionable": false,
-    "category": "Блюда из птицы",
-    "allowedInMeal": [
-    ]
+    "category": "Блюда из птицы"
   },
   {
     "name": "запеканка с рыбой и картошкой",
     "description": null,
     "ingredients": [
+      "рыба",
+      "картофель",
+      "сливки",
+      "сыр"
     ],
-    "questionable": false,
-    "category": "Рыба и морепродукты",
-    "allowedInMeal": [
-    ]
+    "category": "Рыба и морепродукты"
   },
   {
     "name": "белая рыба с морковкой и луком",
     "description": null,
     "ingredients": [
+      "рыба",
+      "морковь",
+      "лук"
     ],
-    "questionable": false,
-    "category": "Рыба и морепродукты",
-    "allowedInMeal": [
-    ]
+    "category": "Рыба и морепродукты"
   },
   {
     "name": "запеченая красная рыба с рисом",
     "description": null,
     "ingredients": [
       "рис",
-      "картошка"
+      "картошка",
+      "лосось",
+      "черри"
     ],
-    "questionable": false,
-    "category": "Рыба и морепродукты",
-    "allowedInMeal": [
-    ]
+    "category": "Рыба и морепродукты"
   },
   {
     "name": "фиш энд чипс",
     "description": null,
     "ingredients": [
+      "белая рыба",
+      "картофель",
+      "масло для жарки",
+      "панко сухари",
+      "йогурт"
     ],
-    "questionable": true,
-    "category": "Рыба и морепродукты",
-    "allowedInMeal": [
-    ]
+    "category": "Рыба и морепродукты"
   },
   {
     "name": "болоньезе",
     "description": null,
     "ingredients": [
+      "паста",
+      "говядина",
+      "томатная паста",
+      "лук",
+      "сельдерей",
+      "морковь"
     ],
-    "questionable": false,
-    "category": "Паста и итальянская кухня",
-    "allowedInMeal": [
-    ]
+    "category": "Паста и итальянская кухня"
   },
   {
     "name": "лазанья",
     "description": null,
     "ingredients": [
+      "паста лазанья",
+      "говядина",
+      "томатная паста",
+      "сыр",
+      "моцарелла",
+      "лук"
     ],
-    "questionable": false,
-    "category": "Паста и итальянская кухня",
-    "allowedInMeal": [
-    ]
+    "category": "Паста и итальянская кухня"
   },
   {
     "name": "канелони",
     "description": null,
     "ingredients": [
+      "паста канелони",
+      "сыр",
+      "говядина",
+      "моцарелла",
+      "лук"
     ],
-    "questionable": false,
-    "category": "Паста и итальянская кухня",
-    "allowedInMeal": [
-    ]
+    "category": "Паста и итальянская кухня"
   },
   {
     "name": "паста с песто",
     "description": null,
     "ingredients": [
+      "паста",
+      "песто",
+      "черри",
+      "сыр"
     ],
-    "questionable": false,
-    "category": "Паста и итальянская кухня",
-    "allowedInMeal": [
-    ]
+    "category": "Паста и итальянская кухня"
   },
   {
     "name": "качо-е-пепе",
     "description": null,
     "ingredients": [
+      "паста",
+      "перец черный",
+      "сыр"
     ],
-    "questionable": false,
-    "category": "Паста и итальянская кухня",
-    "allowedInMeal": [
-    ]
+    "category": "Паста и итальянская кухня"
   },
   {
     "name": "маринара",
     "description": null,
     "ingredients": [
+      "паста",
+      "томатная паста",
+      "томаты консервированные",
+      "чеснок"
     ],
-    "questionable": false,
-    "category": "Паста и итальянская кухня",
-    "allowedInMeal": [
-    ]
+    "category": "Паста и итальянская кухня"
   },
   {
     "name": "паста с анчоусами",
     "description": null,
     "ingredients": [
+      "паста",
+      "анчоусы",
+      "оливки",
+      "чеснок"
     ],
-    "questionable": false,
-    "category": "Паста и итальянская кухня",
-    "allowedInMeal": [
-    ]
+    "category": "Паста и итальянская кухня"
   },
   {
     "name": "паста с креветками в томатном соусе",
     "description": null,
     "ingredients": [
-      "томатный соус",
-      "винный соус"
+      "паста",
+      "томаты консервированные",
+      "креветки",
+      "чеснок"
     ],
-    "questionable": false,
-    "category": "Паста и итальянская кухня",
-    "allowedInMeal": [
-    ]
+    "category": "Паста и итальянская кухня"
   },
   {
     "name": "паста с тунцом",
     "description": null,
     "ingredients": [
+      "паста",
+      "тунец",
+      "шампиньоны",
+      "лук"
     ],
-    "questionable": false,
-    "category": "Паста и итальянская кухня",
-    "allowedInMeal": [
-    ]
+    "category": "Паста и итальянская кухня"
   },
   {
     "name": "паста с грибами и курицей",
     "description": null,
     "ingredients": [
+      "паста",
+      "курица",
+      "грибы",
+      "сливки",
+      "пармезан",
+      "лук"
     ],
-    "questionable": false,
-    "category": "Паста и итальянская кухня",
-    "allowedInMeal": [
-    ]
+    "category": "Паста и итальянская кухня"
   },
   {
     "name": "паста с оливками и ветчиной",
     "description": null,
     "ingredients": [
-    ],
-    "questionable": true,
-    "category": "Паста и итальянская кухня",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "карбонара",
-    "description": null,
-    "ingredients": [
-      "перец черный",
-      "пармезан",
       "паста",
-      "желток",
-      "грана падано"
-    ],
-    "questionable": true,
-    "category": "Паста и итальянская кухня",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "жареный рис с креветками",
-    "description": null,
-    "ingredients": [
-      "курица"
-    ],
-    "questionable": false,
-    "category": "Рис, лапша и азиатские блюда",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "китайская лапша",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Рис, лапша и азиатские блюда",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "поке",
-    "description": "гавайское блюдо с рисом",
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Рис, лапша и азиатские блюда",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "картофельный гратен",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Запеканки и запеченные блюда",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "пастуший пирог",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Запеканки и запеченные блюда",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "пироги",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Запеканки и запеченные блюда",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "пирожки",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Запеканки и запеченные блюда",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "самса",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Запеканки и запеченные блюда",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "беляши",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Запеканки и запеченные блюда",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "чебуреки",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Запеканки и запеченные блюда",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "тыквенный суп",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Супы",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "пельмени",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Пельмени и вареники",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "вареники",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Пельмени и вареники",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "манты",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Пельмени и вареники",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "хинкали",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Пельмени и вареники",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "гёдза",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Пельмени и вареники",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "смэш бургер",
-    "description": null,
-    "ingredients": [
-      "булки",
-      "говядина"
-    ],
-    "questionable": false,
-    "category": "Уличная еда/фастфуд",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "неряха джо",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Уличная еда/фастфуд",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "пита",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Уличная еда/фастфуд",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "шаурма",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Уличная еда/фастфуд",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "сабы",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Уличная еда/фастфуд",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "ламаджо",
-    "description": "ближневосточная лепешка с мясом",
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Уличная еда/фастфуд",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "фахитос",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Уличная еда/фастфуд",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "вафли с фруктами",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Сладкие блюда",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "pbj",
-    "description": "сэндвич с арахисовым маслом и джемом",
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Сладкие блюда",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "dutch baby",
-    "description": "десертный пышный блин с фруктами или сиропом",
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Сладкие блюда",
-    "allowedInMeal": [
-    ]
-  },
-  {
-    "name": "сладкие блины",
-    "description": null,
-    "ingredients": [
-      "варенье",
-      "мед",
-      "сгущенка"
-    ],
-    "questionable": false,
-    "category": "Сладкие блюда",
-    "allowedInMeal": [
-      "breakfast"
-    ]
-  },
-  {
-    "name": "оладьи",
-    "description": null,
-    "ingredients": [
-      "ягоды",
-      "сгущенка",
-      "яблоко",
-      "банан",
-      "кефир"
-    ],
-    "questionable": false,
-    "category": "Сладкие блюда",
-    "allowedInMeal": [
-      "breakfast"
-    ]
-  },
-  {
-    "name": "каша с фруктами",
-    "description": null,
-    "ingredients": [
-      "фрукты"
-    ],
-    "questionable": false,
-    "category": "Сладкие блюда",
-    "allowedInMeal": [
-      "breakfast"
-    ]
-  },
-  {
-    "name": "ночная каша",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Сладкие блюда",
-    "allowedInMeal": [
-      "breakfast"
-    ]
-  },
-  {
-    "name": "кесадилья",
-    "description": "лепешка с сыром и начинкой",
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Несладкие блюда",
-    "allowedInMeal": [
-      "breakfast"
-    ]
-  },
-  {
-    "name": "грилд чиз",
-    "description": "сэндвич с сыром",
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Несладкие блюда",
-    "allowedInMeal": [
-      "breakfast"
-    ]
-  },
-  {
-    "name": "авокадо тост",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Несладкие блюда",
-    "allowedInMeal": [
-      "breakfast"
-    ]
-  },
-  {
-    "name": "драники",
-    "description": "картофельные оладьи",
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Несладкие блюда",
-    "allowedInMeal": [
-      "breakfast"
-    ]
-  },
-  {
-    "name": "сэндвич с тунцом",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Несладкие блюда",
-    "allowedInMeal": [
-      "breakfast"
-    ]
-  },
-  {
-    "name": "круассан с ветчиной",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Несладкие блюда",
-    "allowedInMeal": [
-      "breakfast"
-    ]
-  },
-  {
-    "name": "шакшука",
-    "description": "яичное блюдо с овощами",
-    "ingredients": [
-    ],
-    "questionable": false,
-    "category": "Несладкие блюда",
-    "allowedInMeal": [
-      "breakfast"
-    ]
-  },
-  {
-    "name": "блины",
-    "description": null,
-    "ingredients": [
-      "сыр",
+      "оливки",
       "ветчина",
-      "лосось"
+      "сыр"
     ],
-    "questionable": false,
-    "category": "Несладкие блюда",
-    "allowedInMeal": [
-      "breakfast"
-    ]
-  },
-  {
-    "name": "оладьи",
-    "description": null,
-    "ingredients": [
-      "кабачок",
-      "лосось"
-    ],
-    "questionable": false,
-    "category": "Несладкие блюда",
-    "allowedInMeal": [
-      "breakfast"
-    ]
-  },
-  {
-    "name": "вафли",
-    "description": null,
-    "ingredients": [
-      "картофель",
-      "ветчина",
-      "лосось",
-      "яйцо"
-    ],
-    "questionable": false,
-    "category": "Несладкие блюда",
-    "allowedInMeal": [
-      "breakfast"
-    ]
-  },
-  {
-    "name": "макмафины с яйцом",
-    "description": null,
-    "ingredients": [
-    ],
-    "questionable": true,
-    "category": "Несладкие блюда",
-    "allowedInMeal": [
-      "breakfast"
-    ]
+    "category": "Паста и итальянская кухня"
   }
 ]
