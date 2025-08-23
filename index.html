@@ -1,160 +1,177 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Меню недели</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #fafafa;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    header {
-      background: #4CAF50;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    main {
-      flex: 1;
-      padding: 1rem;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    button {
-      background: #4CAF50;
-      color: white;
-      border: none;
-      padding: 0.6rem 1rem;
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-    button:hover {
-      background: #45a049;
-    }
-    input, select {
-      margin: 0.5rem;
-      padding: 0.4rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    .card {
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      margin: 0.5rem 0;
-      padding: 0.8rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #eee;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Меню недели</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #fafafa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        main {
+            flex: 1;
+            padding: 1rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.6rem 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        input, select {
+            margin: 0.5rem;
+            padding: 0.4rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 0.5rem 0;
+            padding: 0.8rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #eee;
+        }
+    </style>
 </head>
 <body>
-  <header>
+<header>
     <h1>Меню недели</h1>
-  </header>
+</header>
 
-  <main>
+<main>
     <section id="controls">
-      <h2>Сгенерировать меню</h2>
-      <label>
-        Кол-во блюд:
-        <input type="number" id="count" value="5" min="1" max="20">
-      </label>
-      <label>
-        Обязательный ингредиент:
-        <input type="text" id="mustInclude" placeholder="например: курица">
-      </label>
-      <button onclick="generateMenu()">Сгенерировать</button>
-      <div id="menuResult"></div>
+        <h2>Сгенерировать меню</h2>
+        <label>
+            Кол-во блюд:
+            <input type="number" id="count" value="5" min="1" max="20">
+        </label>
+        <label>
+            Обязательный ингредиент:
+            <input type="text" id="mustInclude" placeholder="например: курица">
+        </label>
+        <button onclick="generateMenu()">Сгенерировать</button>
+        <div id="menuResult"></div>
     </section>
 
     <section id="allFood">
-      <h2>Все блюда</h2>
-      <div id="foodList"></div>
+        <h2>Все блюда</h2>
+        <div id="foodList"></div>
     </section>
-  </main>
+</main>
 
-  <footer>
+<footer>
     <small>Меню недели — GitHub Pages</small>
-  </footer>
+</footer>
 
-  <script>
+<script>
     let foodData = [];
 
-    // Utility: normalize strings (e.g. "Курица" == "курица")
     function normalize(str) {
-      return str.toLowerCase().trim();
+        return str.toLowerCase().trim();
     }
 
-    // Load JSON
     fetch("food.json")
-      .then(res => res.json())
-      .then(data => {
-        foodData = data.map(item => ({
-          ...item,
-          name: normalize(item.name),
-          description: item.description,
-          category: item.category,
-          ingredients: item.ingredients.map(normalize)
-        }));
-        renderAllFood();
-      });
+        .then(res => res.json())
+        .then(data => {
+            foodData = data.map(item => ({
+                ...item,
+                name: normalize(item.name),
+                description: item.description,
+                category: item.category,
+                ingredients: item.ingredients.map(normalize)
+            }));
+            renderAllFood();
+        });
 
-    // Show all food list
+    // ✅ Group by category
     function renderAllFood() {
-      const container = document.getElementById("foodList");
-      container.innerHTML = "";
-      foodData.forEach(item => {
-        const div = document.createElement("div");
-        div.className = "card";
-        div.innerHTML = `<strong>${item.name}</strong><br>
-          <em>${item.category}</em><br>
+        const container = document.getElementById("foodList");
+        container.innerHTML = "";
+
+        // Build groups
+        const groups = {};
+        foodData.forEach(item => {
+            if (!groups[item.category]) groups[item.category] = [];
+            groups[item.category].push(item);
+        });
+
+        // Render each category
+        Object.keys(groups).forEach(cat => {
+            const section = document.createElement("div");
+            section.innerHTML = `<h3>${cat}</h3>`;
+
+            groups[cat].forEach(item => {
+                const div = document.createElement("div");
+                div.className = "card";
+                div.innerHTML = `<strong>${item.name}</strong><br>
           ${item.description || ""}<br>
           <small>Ингредиенты: ${item.ingredients.join(", ")}</small>`;
-        container.appendChild(div);
-      });
+                section.appendChild(div);
+            });
+
+            container.appendChild(section);
+        });
     }
 
-    // Random menu generator
     function generateMenu() {
-      const count = parseInt(document.getElementById("count").value) || 5;
-      const mustInclude = normalize(document.getElementById("mustInclude").value);
+        const count = parseInt(document.getElementById("count").value) || 5;
+        const mustInclude = normalize(document.getElementById("mustInclude").value);
 
-      // Filter by ingredient if needed
-      let filtered = foodData;
-      if (mustInclude) {
-        filtered = foodData.filter(item =>
-          item.ingredients.some(ing => ing.includes(mustInclude))
-        );
-      }
+        let filtered = foodData;
+        if (mustInclude) {
+            filtered = foodData.filter(item =>
+                item.ingredients.some(ing => ing.includes(mustInclude))
+            );
+        }
 
-      // Random pick
-      const shuffled = [...filtered].sort(() => 0.5 - Math.random());
-      const selected = shuffled.slice(0, count);
+        const shuffled = [...filtered].sort(() => 0.5 - Math.random());
+        const selected = shuffled.slice(0, count);
 
-      // Collect ingredients
-      const allIngredients = [...new Set(selected.flatMap(i => i.ingredients))];
+        const allIngredients = [...new Set(selected.flatMap(i => i.ingredients))];
 
-      // Render
-      const resultDiv = document.getElementById("menuResult");
-      resultDiv.innerHTML = `
-        <h3>Ваше меню:</h3>
-        ${selected.map(i => `<div class="card"><strong>${i.name}</strong> — ${i.ingredients.join(", ")}</div>`).join("")}
-        <h4>Список ингредиентов:</h4>
-        <div class="card">${allIngredients.join(", ")}</div>
-      `;
+        const resultDiv = document.getElementById("menuResult");
+        resultDiv.innerHTML = `
+      <h3>Ваше меню:</h3>
+      ${selected.map(i => `<div class="card"><strong>${i.name}</strong> — ${i.ingredients.join(", ")}</div>`).join("")}
+      <h4>Список ингредиентов:</h4>
+      <div class="card">${allIngredients.join(", ")}</div>
+    `;
     }
-  </script>
+</script>
+
 </body>
 </html>
