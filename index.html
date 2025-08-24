@@ -36,7 +36,7 @@
             border: none;
             padding: 0.6rem 1rem;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 1rem;
         }
 
@@ -45,45 +45,32 @@
         }
 
         input, select {
-            margin: 0.5rem;
-            padding: 0.4rem;
-            border-radius: 5px;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border-radius: 6px;
             border: 1px solid #ccc;
+            width: 100%;
+            max-width: 300px;
+            font-size: 1rem;
         }
 
         .card {
             background: white;
             border: 1px solid #ddd;
-            border-radius: 8px;
-            margin: 0.5rem 0;
+            border-radius: 10px;
             padding: 0.8rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            transition: transform 0.1s ease-in-out;
         }
 
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background: #eee;
+        .card:hover {
+            transform: translateY(-2px);
         }
 
-        #foodList {
+        #foodList, #menuResult .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .category-group {
-            margin-bottom: 2rem;
-        }
-
-        .category-title {
-            grid-column: 1 / -1; /* Make titles span full width */
-            font-size: 1.2rem;
-            margin-top: 1rem;
-            margin-bottom: 0.5rem;
-            color: #4CAF50;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 0.3rem;
+            gap: 0.8rem;
         }
 
         .tags {
@@ -113,7 +100,34 @@
             cursor: pointer;
         }
 
+        /* ✅ Mobile adjustments */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.4rem;
+            }
 
+            main {
+                padding: 0.5rem;
+            }
+
+            section h2 {
+                font-size: 1.1rem;
+            }
+
+            button {
+                width: 100%;
+                margin-top: 0.5rem;
+            }
+
+            #foodList, #menuResult .grid {
+                grid-template-columns: 1fr; /* single column on small screens */
+            }
+
+            .card {
+                font-size: 0.95rem;
+                padding: 0.7rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -262,9 +276,8 @@
         resultDiv.appendChild(title);
 
         const grid = document.createElement("div");
-        grid.style.display = "grid";
-        grid.style.gridTemplateColumns = "repeat(auto-fit, minmax(250px, 1fr))";
-        grid.style.gap = "1rem";
+        grid.className = "grid"; // ✅ so CSS applies
+        resultDiv.appendChild(grid);
 
         currentSelection.forEach(i => {
             const card = document.createElement("div");
@@ -280,7 +293,6 @@
       </button>
     `;
 
-            // Optional highlight
             if (isLocked) {
                 card.style.border = "2px solid #4CAF50";
                 card.style.background = "#f0fff0";
@@ -288,8 +300,6 @@
 
             grid.appendChild(card);
         });
-
-        resultDiv.appendChild(grid);
 
         const allIngredients = [...new Set(currentSelection.flatMap(i => i.ingredients))];
         const ingredientsTitle = document.createElement("h4");
