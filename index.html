@@ -86,6 +86,34 @@
             padding-bottom: 0.3rem;
         }
 
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: #e0f5e0;
+            color: #2c662d;
+            border: 1px solid #4CAF50;
+            border-radius: 15px;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .tag button {
+            background: none;
+            border: none;
+            color: #2c662d;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+
     </style>
 </head>
 <body>
@@ -100,13 +128,19 @@
             Кол-во блюд:
             <input type="number" id="count" value="5" min="1" max="20">
         </label>
-        <label>
-            Обязательный ингредиент:
-            <input type="text" id="mustInclude" placeholder="например: курица">
-        </label>
+        <br>
+
+        <label>Обязательные ингредиенты:</label><br>
+        <select id="ingredientSelect">
+            <option value="">-- выберите ингредиент --</option>
+        </select>
+        <div id="selectedIngredients" class="tags"></div>
+
+        <br>
         <button onclick="generateMenu()">Сгенерировать</button>
         <div id="menuResult"></div>
     </section>
+
 
     <section id="allFood">
         <h2>Все блюда</h2>
@@ -119,7 +153,12 @@
 </footer>
 
 <script>
+
     let foodData = [];
+    let allIngredientsSet = new Set();
+    let selectedIngredients = [];
+    let lockedDishes = [];          // names of locked dishes
+    let currentSelection = [];      // current generated dishes
 
     function normalize(str) {
         return str.toLowerCase().trim();
@@ -135,8 +174,134 @@
                 category: item.category,
                 ingredients: item.ingredients.map(normalize)
             }));
+
+            foodData.forEach(item => item.ingredients.forEach(ing => allIngredientsSet.add(ing)));
+            populateIngredientDropdown();
             renderAllFood();
         });
+
+    // Dropdown population
+    function populateIngredientDropdown() {
+        const select = document.getElementById("ingredientSelect");
+        Array.from(allIngredientsSet).sort().forEach(ing => {
+            const option = document.createElement("option");
+            option.value = ing;
+            option.textContent = ing;
+            select.appendChild(option);
+        });
+
+        select.addEventListener("change", () => {
+            const val = select.value;
+            if (val && !selectedIngredients.includes(val)) {
+                selectedIngredients.push(val);
+                renderSelectedTags();
+            }
+            select.value = "";
+        });
+    }
+
+    function renderSelectedTags() {
+        const container = document.getElementById("selectedIngredients");
+        container.innerHTML = "";
+        selectedIngredients.forEach(ing => {
+            const tag = document.createElement("div");
+            tag.className = "tag";
+            tag.innerHTML = `${ing} <button onclick="removeIngredient('${ing}')">&times;</button>`;
+            container.appendChild(tag);
+        });
+    }
+
+    function removeIngredient(ing) {
+        selectedIngredients = selectedIngredients.filter(i => i !== ing);
+        renderSelectedTags();
+    }
+
+    // ✅ Toggle lock/unlock without regenerating
+    function toggleLock(dishName) {
+        if (lockedDishes.includes(dishName)) {
+            lockedDishes = lockedDishes.filter(d => d !== dishName);
+        } else {
+            lockedDishes.push(dishName);
+        }
+        renderMenuCards(); // just re-render UI with updated lock state
+    }
+
+    // Generate menu (create currentSelection)
+    function generateMenu() {
+        const count = parseInt(document.getElementById("count").value) || 5;
+
+        let filtered = foodData;
+        if (selectedIngredients.length > 0) {
+            filtered = foodData.filter(item =>
+                selectedIngredients.every(ing => item.ingredients.includes(ing))
+            );
+        }
+
+        // Keep locked dishes
+        const locked = foodData.filter(i => lockedDishes.includes(i.name));
+
+        // Fill remaining slots
+        const remainingCount = count - locked.length;
+        const pool = filtered.filter(i => !lockedDishes.includes(i.name));
+        const shuffled = [...pool].sort(() => 0.5 - Math.random());
+        const newOnes = shuffled.slice(0, remainingCount);
+
+        // ✅ Save current selection
+        currentSelection = [...locked, ...newOnes];
+
+        renderMenuCards();
+    }
+
+    // Render currentSelection with lock states
+    function renderMenuCards() {
+        const resultDiv = document.getElementById("menuResult");
+        resultDiv.innerHTML = "";
+
+        const title = document.createElement("h3");
+        title.textContent = "Ваше меню:";
+        resultDiv.appendChild(title);
+
+        const grid = document.createElement("div");
+        grid.style.display = "grid";
+        grid.style.gridTemplateColumns = "repeat(auto-fit, minmax(250px, 1fr))";
+        grid.style.gap = "1rem";
+
+        currentSelection.forEach(i => {
+            const card = document.createElement("div");
+            card.className = "card";
+
+            const isLocked = lockedDishes.includes(i.name);
+
+            card.innerHTML = `
+      <strong>${i.name}</strong><br>
+      <small>Ингредиенты: ${i.ingredients.join(", ")}</small><br>
+      <button onclick="toggleLock('${i.name}')">
+        ${isLocked ? "🔒 Зафиксировано" : "🔓 Зафиксировать"}
+      </button>
+    `;
+
+            // Optional highlight
+            if (isLocked) {
+                card.style.border = "2px solid #4CAF50";
+                card.style.background = "#f0fff0";
+            }
+
+            grid.appendChild(card);
+        });
+
+        resultDiv.appendChild(grid);
+
+        const allIngredients = [...new Set(currentSelection.flatMap(i => i.ingredients))];
+        const ingredientsTitle = document.createElement("h4");
+        ingredientsTitle.textContent = "Список ингредиентов:";
+        resultDiv.appendChild(ingredientsTitle);
+
+        const ingredientsCard = document.createElement("div");
+        ingredientsCard.className = "card";
+        ingredientsCard.textContent = allIngredients.join(", ");
+        resultDiv.appendChild(ingredientsCard);
+    }
+
 
     // ✅ Group by category
     function renderAllFood() {
@@ -180,56 +345,6 @@
         });
     }
 
-    function generateMenu() {
-        const count = parseInt(document.getElementById("count").value) || 5;
-        const mustInclude = normalize(document.getElementById("mustInclude").value);
-
-        let filtered = foodData;
-        if (mustInclude) {
-            filtered = foodData.filter(item =>
-                item.ingredients.some(ing => ing.includes(mustInclude))
-            );
-        }
-
-        const shuffled = [...filtered].sort(() => 0.5 - Math.random());
-        const selected = shuffled.slice(0, count);
-
-        const allIngredients = [...new Set(selected.flatMap(i => i.ingredients))];
-
-        const resultDiv = document.getElementById("menuResult");
-        resultDiv.innerHTML = "";
-
-        // Title
-        const title = document.createElement("h3");
-        title.textContent = "Ваше меню:";
-        resultDiv.appendChild(title);
-
-        // ✅ Cards in a grid
-        const grid = document.createElement("div");
-        grid.style.display = "grid";
-        grid.style.gridTemplateColumns = "repeat(auto-fit, minmax(250px, 1fr))";
-        grid.style.gap = "1rem";
-
-        selected.forEach(i => {
-            const card = document.createElement("div");
-            card.className = "card";
-            card.innerHTML = `<strong>${i.name}</strong><br>
-      <small>Ингредиенты: ${i.ingredients.join(", ")}</small>`;
-            grid.appendChild(card);
-        });
-
-        resultDiv.appendChild(grid);
-
-        // Ingredients summary
-        const ingredientsTitle = document.createElement("h4");
-        ingredientsTitle.textContent = "Список ингредиентов:";
-        resultDiv.appendChild(ingredientsTitle);
-
-        const ingCard = document.createElement("div");
-        ingCard.className = "card";
-        ingCard.textContent = allIngredients.join(", ");
-        resultDiv.appendChild(ingCard);
-    }
 </script>
 
 </body>
